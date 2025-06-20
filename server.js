@@ -1,7 +1,8 @@
 const axios = require('axios');
 const express = require('express');
+const cors = require('cors');
 const app = express();
-
+app.use(cors())
 const apiKey = process.env.API_KEY;
 
 app.get('/api/news', async (req, res) => {
