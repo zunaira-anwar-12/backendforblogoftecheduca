@@ -1,9 +1,8 @@
-require('dotenv').config();
 const axios = require('axios');
 const express = require('express');
 const app = express();
 
-const apiKey = process.env.apiKey;
+const apiKey = process.env.API_KEY;
 
 app.get('/api/news', async (req, res) => {
   try {
