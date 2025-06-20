@@ -1,11 +1,9 @@
-const express = require('express');
+require('dotenv').config();
 const axios = require('axios');
-const cors = require('cors');
-
+const express = require('express');
 const app = express();
-app.use(cors());
 
-const apiKey = 'f6ae20ba570f4f0cb564df77d7c2b40d'; // Your NewsAPI key
+const apiKey = process.env.apiKey;
 
 app.get('/api/news', async (req, res) => {
   try {
@@ -20,7 +18,6 @@ app.get('/api/news', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
